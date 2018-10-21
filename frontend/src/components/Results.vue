@@ -31,7 +31,7 @@ export default {
       'searchData',
     ]),
     alphabetizeBusinesses() {
-      const businesses = this.searchData.results.businesses;
+      const businesses = this.searchData.results.businesses || [];
       return businesses.sort((a, b) => a.name.localeCompare(b.name));
     },
   },
