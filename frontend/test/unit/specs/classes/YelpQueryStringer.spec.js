@@ -20,4 +20,8 @@ describe('happy path QueryStringer', () => {
   it('has an encodedRadius attribute', () => {
     expect(yelpQueryStringer.encodedRadius).to.equal('804.672');
   });
+
+  it('generates a requestUrl', () => {
+    expect(yelpQueryStringer.requestUrl()).to.equal('https://api.yelp.com/v3/businesses/search?location=720%20East%20Wisconsin%20Ave.%20Milwaukee,%20WI%2053202&radius=804.672&price=1,2,3,4');
+  });
 });
