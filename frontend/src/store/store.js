@@ -15,9 +15,9 @@ const searchData = {
   },
   state: {
     search: {
-      location: '',
-      radius: '',
-      price: [],
+      location: '720 East Wisconsin Ave. Milwaukee, WI 53202',
+      radius: '804.672',
+      price: [1, 2, 3, 4],
       open_now: false,
     },
     results: {},
