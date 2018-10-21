@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'YelpQueryStringer',
+      'yelpQueryStringer',
     ]),
     ...mapState([
       'searchData',
@@ -29,15 +29,16 @@ export default {
     },
   },
   mounted() {
-    axios.post('/user', {
-      firstName: 'Fred',
-      lastName: 'Flintstone',
+    axios.post('http://localhost:3000/api/v1/yelp_request', {
+      yelp_request: {
+        url: this.yelpQueryStringer.requestUrl(),
+      },
     })
       .then((response) => {
-        console.log(response);
+        this.$store.dispatch('updateResults', response);
       })
       .catch((error) => {
-        console.log(error);
+        // TODO: Handle Errors
       });
   },
 };

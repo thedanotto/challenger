@@ -13,11 +13,8 @@ class Services::Yelp
     when 200..299
       return response
     else
-      return response
       # IDENTIFY WHERE INVALID RESPONSES ARE HANDLED WHEN FRONTEND AND BACKEND ARE MARRIED
-#      puts "ERROR:"
-#      puts response
-#      raise UnhandledResponseError
+      return response
     end
 
   end
