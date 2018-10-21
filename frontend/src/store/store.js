@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import YelpQueryStringer from '../classes/YelpQueryStringer';
 
 Vue.use(Vuex);
 Vue.config.productionTip = false;
@@ -22,6 +23,7 @@ const searchData = {
     results: {},
   },
   getters: {
+    yelpQueryStringer: state => new YelpQueryStringer(state.search),
   },
 };
 

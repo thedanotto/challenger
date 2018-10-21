@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
+import axios from 'axios';
 
 export default {
   name: 'Search',
@@ -15,6 +16,9 @@ export default {
     };
   },
   computed: {
+    ...mapGetters([
+      'YelpQueryStringer',
+    ]),
     ...mapState([
       'searchData',
     ]),
@@ -23,6 +27,18 @@ export default {
     updateLocation(e) {
       this.$store.dispatch('updateLocation', e.target.value);
     },
+  },
+  mounted() {
+    axios.post('/user', {
+      firstName: 'Fred',
+      lastName: 'Flintstone',
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
 };
 </script>
