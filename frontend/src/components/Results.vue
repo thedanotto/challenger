@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Barf</h1>
     <div v-for="biz in alphabetizeBusinesses" :key="biz.id">
       {{ biz.name }}<br />
       {{ biz.image_url }}<br />
