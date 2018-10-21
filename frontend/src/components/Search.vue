@@ -39,6 +39,7 @@ export default {
       })
       .catch((error) => {
         // TODO: Handle Errors
+        console.log(error);
       });
   },
 };

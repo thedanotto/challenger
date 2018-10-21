@@ -24,7 +24,9 @@ const searchData = {
       radius: '804',
       price: [1, 2, 3, 4],
     },
-    results: {},
+    results: {
+      businesses: [],
+    },
   },
   getters: {
     yelpQueryStringer: state => new YelpQueryStringer(state.search),
