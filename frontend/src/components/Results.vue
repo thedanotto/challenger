@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{ searchData.results.total || 0 }} Results
     <div v-for="biz in alphabetizeBusinesses" :key="biz.id" class="result">
       <div class="result__main-attributes">
         <h2 class="result__h2">{{ biz.name }}</h2>
