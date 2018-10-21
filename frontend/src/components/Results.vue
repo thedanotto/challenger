@@ -37,8 +37,8 @@ export default {
   },
   methods: {
     stripPeriod(rating) {
-      return rating.toString().replace(".", "");
-    }
+      return rating.toString().replace('.', '');
+    },
   },
 };
 </script>
