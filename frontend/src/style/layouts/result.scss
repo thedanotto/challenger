@@ -1,0 +1,81 @@
+/* Single Result */
+.result {
+  hr {
+    margin: 20px 0;
+  }
+}
+
+.result__p {
+  margin: 0px;
+}
+
+.result__contact {
+  margin-top: 10px;
+}
+
+.result__main-attributes {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 0 0 10px;
+}
+
+.result__h2 {
+  margin: 0 0 5px 0;
+}
+
+.result__bg-image {
+  width: 20vw;
+  height: 20vw;
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.result__reviews {
+  span {
+    vertical-align: top;
+    font-size: 14px;
+  }
+}
+
+.result__stars {
+  width: 102px;
+  height: 18px;
+  display: inline-block;
+}
+
+.result__stars--5 {
+  background-position: 0 -402px;
+}
+
+.result__stars--45 {
+  background-position: 0 -384px;
+}
+
+.result__stars--4 {
+  background-position: 0 -366px;
+}
+
+.result__stars--35 {
+  background-position: 0 -348px;
+}
+
+.result__stars--3 {
+  background-position: 0 -330px;
+}
+
+.result__stars--25 {
+  background-position: 0 -312px;
+}
+
+.result__stars--2 {
+  background-position: 0 -294px;
+}
+
+.result__stars--15 {
+  background-position: 0 -276px;
+}
+
+.result__stars--1 {
+  background-position: 0 -258px;
+}
