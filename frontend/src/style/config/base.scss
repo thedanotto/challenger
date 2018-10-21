@@ -1,0 +1,27 @@
+body {
+  font-family: $sans-serif;
+  font-size: $type-sm;
+  font-weight: 400;
+  color: $black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+label {
+  font-size: $type-qsm;
+  line-height: $type-md;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 3px;
+}
+
+h2 {
+  font-size: $type-lg;
+  display: block;
+  font-weight: 700;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}

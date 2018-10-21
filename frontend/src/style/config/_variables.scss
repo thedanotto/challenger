@@ -1,0 +1,55 @@
+// typography
+$sans-serif: 'Source Sans Pro', sans-serif;
+$serif: 'Droid Serif', serif;
+$block-serif: courier;
+
+
+// type
+$type-xxxxs: 6px;
+$type-xxxs: 8px;
+$type-xxs: 10px;
+$type-xs: 12px;
+$type-qsm: 14px; // quite small
+$type-sm: 16px;
+$type-md: 20px;
+$type-mdlg: 22px;
+$type-lg: 24px;
+$type-xl: 28px;
+$type-xxl: 32px;
+$type-xxxl: 36px;
+
+// colors
+$blue: #64969e;
+$black: #31373a;
+$grey: #eee;
+$dark-grey: darken($grey, 10%);
+$light-grey: lighten($black, 25%);
+$white: #ffffff;
+$primary-blue: #557FCB;
+$danger: #FF7061;
+$warning: #FFC764;
+
+// Write all styles for Mobile First! baseline Phone Portrait
+$phone-landscape: 480px;
+$tablet-portrait: 768px;
+$tablet-landscape: 992px;
+$laptop: 1200px;
+$monitor: 1600px;
+
+// Listed for Easy Copying no other functional purpose
+/*
+@include breakpoint($phone-landscape) {
+}
+
+@include breakpoint($tablet-portrait) {
+}
+
+@include breakpoint($tablet-landscape) {
+}
+
+@include breakpoint($laptop) {
+}
+
+@include breakpoint($monitor) {
+}
+*/

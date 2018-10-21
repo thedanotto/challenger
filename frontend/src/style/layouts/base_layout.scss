@@ -1,0 +1,80 @@
+.wrapper {
+  margin: 0;
+  padding: 20px 0;
+  background-color: #ffffff;
+  min-height: 350px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 68em;
+}
+
+.grid {
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 20% 15% 25% 20% 20%;
+  -ms-grid-columns: 20% 15% 25% 20% 20%;
+  margin-bottom: 20px;
+}
+
+.inputs-container {
+  grid-column-start: 1;
+  grid-column-end: 6;
+
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+
+  @include breakpoint($phone-landscape) {
+  }
+
+  @include breakpoint($tablet-portrait) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+
+  @include breakpoint($tablet-landscape) {
+  }
+
+  @include breakpoint($laptop) {
+  }
+
+  @include breakpoint($monitor) {
+  }
+}
+
+.results-container {
+  grid-column-start: 1;
+  grid-column-end: 6;
+
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+
+  @include breakpoint($phone-landscape) {
+  }
+
+  @include breakpoint($tablet-portrait) {
+    grid-column-start: 3;
+    grid-column-end: 6;
+
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+  }
+
+  @include breakpoint($tablet-landscape) {
+  }
+
+  @include breakpoint($laptop) {
+  }
+
+  @include breakpoint($monitor) {
+  }
+}

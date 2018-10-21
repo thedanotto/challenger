@@ -1,0 +1,18 @@
+input {
+  font-family: inherit;
+  font-weight: 300;
+  font-size: inherit;
+  border-radius: 0px;
+  background-color: $white;
+
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 1px $light-grey solid;
+
+  &:hover, &:focus {
+    border: 1px $black solid;
+    outline: none;
+  }
+
+}

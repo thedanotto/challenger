@@ -1,7 +1,15 @@
 <template>
-  <div id="app">
-    <Search/>
-    <Results />
+  <div class="wrapper">
+    <div class="container">
+      <div class="grid">
+        <div class="inputs-container">
+          <Search/>
+        </div>
+        <div class="results-container">
+          <Results />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

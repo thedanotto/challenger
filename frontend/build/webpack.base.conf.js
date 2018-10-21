@@ -37,6 +37,7 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
       'style': path.resolve(__dirname, '../src/style/'),
+      'vendor-styles': path.resolve(__dirname, '../node_modules/'),
     }
   },
   module: {

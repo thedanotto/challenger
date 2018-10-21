@@ -1,10 +1,13 @@
 <template>
-  <div>
-    <input
-      :value="searchData.search.location"
-      @blur="updateLocation"
-      @input="debounceUpdateLocation"
-    />
+  <div class="field">
+    <label>Location</label>
+    <div class="input-container">
+      <input
+        :value="searchData.search.location"
+        @blur="updateLocation"
+        @input="debounceUpdateLocation"
+      />
+    </div>
   </div>
 </template>
 

@@ -1,0 +1,21 @@
+.results-container {
+  padding: 0;
+
+  @include breakpoint($phone-landscape) {
+  }
+
+  @include breakpoint($tablet-portrait) {
+    padding: 0 30px;
+  }
+
+  @include breakpoint($tablet-landscape) {
+    padding: 0 60px;
+  }
+
+  @include breakpoint($laptop) {
+  }
+
+  @include breakpoint($monitor) {
+  }
+
+}

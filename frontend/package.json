@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "breakpoint-sass": "^2.7.1",
     "lodash.debounce": "^4.0.8",
     "vue": "^2.5.2",
     "vuex": "^3.0.1"

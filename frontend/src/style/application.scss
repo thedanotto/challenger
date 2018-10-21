@@ -1,3 +1,19 @@
-h1 {
-  
-}
+/*
+  This file imports all other scss files
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600');
+
+@import '~vendor-styles/breakpoint-sass/stylesheets/_breakpoint.scss';
+
+// Config
+@import '~style/config/_variables.scss';
+@import '~style/config/base.scss';
+
+// Layouts
+@import '~style/layouts/base_layout.scss';
+@import '~style/layouts/forms.scss';
+@import '~style/layouts/results.scss';
+
+// Components
+@import '~style/components/inputs.scss';
