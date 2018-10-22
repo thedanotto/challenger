@@ -4,9 +4,9 @@
       <div class="input-container">
         <button
           v-for="option in searchData.searchOptions[searchOptionsList]"
-          :key="option"
+          :key="option.api"
           class="btn btn--sm"
-          :class="{ 'btn--selected': isOptionSelected(isOptionSelectedComparer, option.api) }"
+          :class="{ 'btn--selected': isOptionSelected(storeItem, option.api) }"
           @click="selectOption(storeAction, option.api)"
         >
           {{ option.friendly }}
@@ -26,10 +26,10 @@ export default {
     ]),
   },
   props: {
-    isOptionSelectedComparer: { required: true },
     label: { required: true },
     searchOptionsList: { required: true },
     storeAction: { required: true },
+    storeItem: { required: true },
   },
   methods: {
     isOptionSelected(storeItem, value) {

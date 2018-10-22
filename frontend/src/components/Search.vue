@@ -11,23 +11,23 @@
       </div>
     </div>
     <button-group
-      isOptionSelectedComparer='radius'
       label='Distance'
       searchOptionsList='radiusOptions'
       storeAction='selectDistance'
+      storeItem='radius'
     ></button-group>
     <button-group
-      isOptionSelectedComparer='term'
       label='Looking For?'
       searchOptionsList='termOptions'
       storeAction='selectTerm'
+      storeItem='term'
     ></button-group>
     <div class="field">
       <label>Budget?</label>
       <div class="input-container">
         <button
           v-for="option in searchData.searchOptions.priceOptions"
-          :key="option"
+          :key="option.api"
           class="btn btn--sm"
           :class="{ 'btn--selected': isPriceSelected(option.api) }"
           @click="selectOption('togglePrice', option.api)"
@@ -70,6 +70,9 @@ export default {
     },
     handleFocus(e) {
       e.target.select();
+    },
+    selectOption(storeAction, value) {
+      this.$store.dispatch(storeAction, value);
     },
     updateLocation(e) {
       this.$store.dispatch('updateLocation', e.target.value);
