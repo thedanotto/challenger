@@ -48,6 +48,10 @@
 
   @include breakpoint($monitor) {
   }
+
+  button {
+    margin-right: 5px;
+  }
 }
 
 .results-container {

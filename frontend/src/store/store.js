@@ -62,6 +62,48 @@ const searchData = {
   },
   state: {
     loading: false,
+    searchOptions: {
+      priceOptions: [
+        {
+          api: '1',
+          friendly: '$',
+        }, {
+          api: '2',
+          friendly: '$$',
+        }, {
+          api: '3',
+          friendly: '$$$',
+        }, {
+          api: '4',
+          friendly: '$$$$',
+        },
+      ],
+      radiusOptions: [
+        {
+          api: 804,
+          friendly: '0.5 mi',
+        }, {
+          api: 1608,
+          friendly: '1 mi',
+        }, {
+          api: 3216,
+          friendly: '2 mi',
+        }, {
+          api: 8040,
+          friendly: '5 mi',
+        },
+      ],
+      termOptions: [
+        {
+          api: 'Restaurants',
+          friendly: 'Food',
+        },
+        {
+          api: 'Bars',
+          friendly: 'Drinks',
+        },
+      ],
+    },
     search: {
       location: '720 East Wisconsin Ave. Milwaukee, WI 53202',
       radius: 804,

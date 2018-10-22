@@ -13,53 +13,24 @@
     <div class="field">
       <label>Distance</label>
       <div class="input-container">
-        <button class="btn btn--sm" :class="{ 'btn--selected': this.isDistanceSelected(804) }" @click="selectDistance(804)">
-          0.5 mi
-        </button>
-        <button class="btn btn--sm" :class="{ 'btn--selected': this.isDistanceSelected(1608) }" @click="selectDistance(1608)">
-          1 mi
-        </button>
-        <button class="btn btn--sm" :class="{ 'btn--selected': this.isDistanceSelected(3216) }" @click="selectDistance(3216)">
-          2 mi
-        </button>
-        <button class="btn btn--sm" :class="{ 'btn--selected': this.isDistanceSelected(8040) }" @click="selectDistance(8040)">
-          5 mi
+        <button v-for="option in searchData.searchOptions.radiusOptions" class="btn btn--sm" :class="{ 'btn--selected': isDistanceSelected(option.api) }" @click="selectDistance(option.api)">
+          {{ option.friendly }}
         </button>
       </div>
     </div>
     <div class="field">
       <label>Looking For?</label>
       <div class="input-container">
-        <button
-          class="btn btn--sm"
-          :class="{ 'btn--selected': this.isTermSelected('Restaurants') }"
-          @click="selectTerm('Restaurants')"
-        >
-          Food
-        </button>
-        <button
-          class="btn btn--sm"
-          :class="{ 'btn--selected': this.isTermSelected('Bars') }"
-          @click="selectTerm('Bars')"
-        >
-          Drinks
+        <button v-for="option in searchData.searchOptions.termOptions" class="btn btn--sm" :class="{ 'btn--selected': isTermSelected(option.api) }" @click="selectTerm(option.api)">
+          {{ option.friendly }}
         </button>
       </div>
     </div>
     <div class="field">
       <label>Budget?</label>
       <div class="input-container">
-        <button class="btn btn--sm" :class="{ 'btn--selected': this.isPriceSelected('1') }" @click="togglePrice('1')">
-          $
-        </button>
-        <button class="btn btn--sm" :class="{ 'btn--selected': this.isPriceSelected('2') }" @click="togglePrice('2')">
-          $$
-        </button>
-        <button class="btn btn--sm" :class="{ 'btn--selected': this.isPriceSelected('3') }" @click="togglePrice('3')">
-          $$$
-        </button>
-        <button class="btn btn--sm" :class="{ 'btn--selected': this.isPriceSelected('4') }" @click="togglePrice('4')">
-          $$$$
+        <button v-for="option in searchData.searchOptions.priceOptions" class="btn btn--sm" :class="{ 'btn--selected': isPriceSelected(option.api) }" @click="togglePrice(option.api)">
+          {{ option.friendly }}
         </button>
       </div>
     </div>
