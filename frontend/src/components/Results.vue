@@ -30,7 +30,7 @@ import { Circle8 } from 'vue-loading-spinner';
 export default {
   name: 'Results',
   components: {
-    Circle8
+    Circle8,
   },
   data() {
     return {
@@ -47,10 +47,10 @@ export default {
     hasResults() {
       if (this.searchData.results) {
         return this.searchData.results.total > 0;
-      } else {
-        return false;
       }
-    }
+
+      return false;
+    },
   },
   methods: {
     stripPeriod(rating) {
