@@ -25,13 +25,24 @@
     <div class="field">
       <label>Budget?</label>
       <div class="input-container">
-        <button v-for="option in searchData.searchOptions.priceOptions" class="btn btn--sm" :class="{ 'btn--selected': isPriceSelected(option.api) }" @click="selectOption('togglePrice', option.api)">
+        <button
+          v-for="option in searchData.searchOptions.priceOptions"
+          :key="option"
+          class="btn btn--sm"
+          :class="{ 'btn--selected': isPriceSelected(option.api) }"
+          @click="selectOption('togglePrice', option.api)"
+        >
           {{ option.friendly }}
         </button>
       </div>
     </div>
     <div class="field">
-      <button class="btn btn--submit" @click="getResults">Find Nearby {{ searchData.search.term }}!</button>
+      <button
+        class="btn btn--submit"
+        @click="getResults"
+      >
+        Find Nearby {{ searchData.search.term }}!
+      </button>
     </div>
   </div>
 </template>

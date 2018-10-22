@@ -2,7 +2,13 @@
     <div class="field">
       <label>{{ label }}</label>
       <div class="input-container">
-        <button v-for="option in searchData.searchOptions[searchOptionsList]" class="btn btn--sm" :class="{ 'btn--selected': isOptionSelected(isOptionSelectedComparer, option.api) }" @click="selectOption(storeAction, option.api)">
+        <button
+          v-for="option in searchData.searchOptions[searchOptionsList]"
+          :key="option"
+          class="btn btn--sm"
+          :class="{ 'btn--selected': isOptionSelected(isOptionSelectedComparer, option.api) }"
+          @click="selectOption(storeAction, option.api)"
+        >
           {{ option.friendly }}
         </button>
       </div>
