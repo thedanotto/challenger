@@ -37,10 +37,34 @@ line-height: normal;
 font-size: $type-sm;
 padding: 10px 20px;
 font-weight: 600;
-color: $white;
-background-color: $danger;
+border: 1px solid $black;
+
+  &:hover {
+    color: $danger;
+    border: 1px solid $danger;
+  }
 }
 
-.selected {
-  background-color: red;
+.btn--sm {
+  padding: 5px 10px;
+}
+
+.btn--submit {
+  color: $white;
+  background-color: $danger;
+  border: 1px solid $danger;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.btn--selected {
+  color: $white;
+  background-color: $danger;
+  border: 1px solid $danger;
+
+  &:hover {
+    color: $white;
+  }
 }

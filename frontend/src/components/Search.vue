@@ -13,16 +13,16 @@
     <div class="field">
       <label>Distance</label>
       <div class="input-container">
-        <button :class="{ selected: this.isDistanceSelected(804) }" @click="selectDistance(804)">
+        <button class="btn btn--sm" :class="{ 'btn--selected': this.isDistanceSelected(804) }" @click="selectDistance(804)">
           0.5 mi
         </button>
-        <button :class="{ selected: this.isDistanceSelected(1608) }" @click="selectDistance(1608)">
+        <button class="btn btn--sm" :class="{ 'btn--selected': this.isDistanceSelected(1608) }" @click="selectDistance(1608)">
           1 mi
         </button>
-        <button :class="{ selected: this.isDistanceSelected(3216) }" @click="selectDistance(3216)">
+        <button class="btn btn--sm" :class="{ 'btn--selected': this.isDistanceSelected(3216) }" @click="selectDistance(3216)">
           2 mi
         </button>
-        <button :class="{ selected: this.isDistanceSelected(8040) }" @click="selectDistance(8040)">
+        <button class="btn btn--sm" :class="{ 'btn--selected': this.isDistanceSelected(8040) }" @click="selectDistance(8040)">
           5 mi
         </button>
       </div>
@@ -31,13 +31,15 @@
       <label>Looking For?</label>
       <div class="input-container">
         <button
-          :class="{ selected: this.isTermSelected('Restaurants') }"
+          class="btn btn--sm"
+          :class="{ 'btn--selected': this.isTermSelected('Restaurants') }"
           @click="selectTerm('Restaurants')"
         >
           Food
         </button>
         <button
-          :class="{ selected: this.isTermSelected('Bars') }"
+          class="btn btn--sm"
+          :class="{ 'btn--selected': this.isTermSelected('Bars') }"
           @click="selectTerm('Bars')"
         >
           Drinks
@@ -47,22 +49,22 @@
     <div class="field">
       <label>Budget?</label>
       <div class="input-container">
-        <button :class="{ selected: this.isPriceSelected('1') }" @click="togglePrice('1')">
+        <button class="btn btn--sm" :class="{ 'btn--selected': this.isPriceSelected('1') }" @click="togglePrice('1')">
           $
         </button>
-        <button :class="{ selected: this.isPriceSelected('2') }" @click="togglePrice('2')">
+        <button class="btn btn--sm" :class="{ 'btn--selected': this.isPriceSelected('2') }" @click="togglePrice('2')">
           $$
         </button>
-        <button :class="{ selected: this.isPriceSelected('3') }" @click="togglePrice('3')">
+        <button class="btn btn--sm" :class="{ 'btn--selected': this.isPriceSelected('3') }" @click="togglePrice('3')">
           $$$
         </button>
-        <button :class="{ selected: this.isPriceSelected('4') }" @click="togglePrice('4')">
+        <button class="btn btn--sm" :class="{ 'btn--selected': this.isPriceSelected('4') }" @click="togglePrice('4')">
           $$$$
         </button>
       </div>
     </div>
     <div class="field">
-      <button class="btn" @click="getResults">Find Nearby {{ searchData.search.term }}!</button>
+      <button class="btn btn--submit" @click="getResults">Find Nearby {{ searchData.search.term }}!</button>
     </div>
   </div>
 </template>
