@@ -1,13 +1,17 @@
 <template>
-  <div class="field">
-    <label>Location</label>
-    <div class="input-container">
-      <input
-        @focus="handleFocus($event)"
-        :value="searchData.search.location"
-        @input="updateLocation"
-      />
-      <button @click="getResults">Show Me Open Restaurants!</button>
+  <div>
+    <div class="field">
+      <label>Location</label>
+      <div class="input-container">
+        <input
+          @focus="handleFocus($event)"
+          :value="searchData.search.location"
+          @input="updateLocation"
+        />
+      </div>
+    </div>
+    <div class="field">
+      <button class="btn" @click="getResults">Find Nearby Open Restaurants!</button>
     </div>
   </div>
 </template>
