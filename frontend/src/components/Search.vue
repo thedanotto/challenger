@@ -13,7 +13,7 @@
     <div class="field">
       <label>Distance</label>
       <div class="input-container">
-        <button v-for="option in searchData.searchOptions.radiusOptions" class="btn btn--sm" :class="{ 'btn--selected': isDistanceSelected(option.api) }" @click="selectDistance(option.api)">
+        <button v-for="option in searchData.searchOptions.radiusOptions" class="btn btn--sm" :class="{ 'btn--selected': isOptionSelected('radius', option.api) }" @click="selectOption('selectDistance', option.api)">
           {{ option.friendly }}
         </button>
       </div>
@@ -21,7 +21,7 @@
     <div class="field">
       <label>Looking For?</label>
       <div class="input-container">
-        <button v-for="option in searchData.searchOptions.termOptions" class="btn btn--sm" :class="{ 'btn--selected': isTermSelected(option.api) }" @click="selectTerm(option.api)">
+        <button v-for="option in searchData.searchOptions.termOptions" class="btn btn--sm" :class="{ 'btn--selected': isOptionSelected('term', option.api) }" @click="selectOption('selectTerm', option.api)">
           {{ option.friendly }}
         </button>
       </div>
@@ -29,7 +29,7 @@
     <div class="field">
       <label>Budget?</label>
       <div class="input-container">
-        <button v-for="option in searchData.searchOptions.priceOptions" class="btn btn--sm" :class="{ 'btn--selected': isPriceSelected(option.api) }" @click="togglePrice(option.api)">
+        <button v-for="option in searchData.searchOptions.priceOptions" class="btn btn--sm" :class="{ 'btn--selected': isPriceSelected(option.api) }" @click="selectOption('togglePrice', option.api)">
           {{ option.friendly }}
         </button>
       </div>
@@ -54,14 +54,11 @@ export default {
     ]),
   },
   methods: {
-    isDistanceSelected(dist) {
-      return dist === this.searchData.search.radius;
+    isOptionSelected(storeItem, value) {
+      return value === this.searchData.search[storeItem];
     },
     isPriceSelected(price) {
       return this.searchData.search.price.indexOf(price) !== -1;
-    },
-    isTermSelected(term) {
-      return term === this.searchData.search.term;
     },
     getResults() {
       this.$store.dispatch('getResults');
@@ -69,14 +66,8 @@ export default {
     handleFocus(e) {
       e.target.select();
     },
-    selectDistance(dist) {
-      this.$store.dispatch('selectDistance', dist);
-    },
-    selectTerm(term) {
-      this.$store.dispatch('selectTerm', term);
-    },
-    togglePrice(price) {
-      this.$store.dispatch('togglePrice', price);
+    selectOption(storeAction, value) {
+      this.$store.dispatch(storeAction, value);
     },
     updateLocation(e) {
       this.$store.dispatch('updateLocation', e.target.value);
