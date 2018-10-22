@@ -10,22 +10,18 @@
         />
       </div>
     </div>
-    <div class="field">
-      <label>Distance</label>
-      <div class="input-container">
-        <button v-for="option in searchData.searchOptions.radiusOptions" class="btn btn--sm" :class="{ 'btn--selected': isOptionSelected('radius', option.api) }" @click="selectOption('selectDistance', option.api)">
-          {{ option.friendly }}
-        </button>
-      </div>
-    </div>
-    <div class="field">
-      <label>Looking For?</label>
-      <div class="input-container">
-        <button v-for="option in searchData.searchOptions.termOptions" class="btn btn--sm" :class="{ 'btn--selected': isOptionSelected('term', option.api) }" @click="selectOption('selectTerm', option.api)">
-          {{ option.friendly }}
-        </button>
-      </div>
-    </div>
+    <button-group
+      isOptionSelectedComparer='radius'
+      label='Distance'
+      searchOptionsList='radiusOptions'
+      storeAction='selectDistance'
+    ></button-group>
+    <button-group
+      isOptionSelectedComparer='term'
+      label='Looking For?'
+      searchOptionsList='termOptions'
+      storeAction='selectTerm'
+    ></button-group>
     <div class="field">
       <label>Budget?</label>
       <div class="input-container">
@@ -42,9 +38,13 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex';
+import ButtonGroup from './ButtonGroup';
 
 export default {
   name: 'Search',
+  components: {
+    ButtonGroup,
+  },
   computed: {
     ...mapGetters([
       'yelpQueryStringer',
@@ -54,9 +54,6 @@ export default {
     ]),
   },
   methods: {
-    isOptionSelected(storeItem, value) {
-      return value === this.searchData.search[storeItem];
-    },
     isPriceSelected(price) {
       return this.searchData.search.price.indexOf(price) !== -1;
     },
@@ -65,9 +62,6 @@ export default {
     },
     handleFocus(e) {
       e.target.select();
-    },
-    selectOption(storeAction, value) {
-      this.$store.dispatch(storeAction, value);
     },
     updateLocation(e) {
       this.$store.dispatch('updateLocation', e.target.value);
