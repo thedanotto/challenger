@@ -3,6 +3,9 @@
     <div v-if="searchData.loading" class="loading">
       <circle8></circle8>
     </div>
+    <div v-else-if="hasResults === false">
+      No Results. Try a different Location.
+    </div>
     <div v-else v-for="biz in alphabetizeBusinesses" :key="biz.id" class="result">
       <div class="result__main-attributes">
         <h2 class="result__h2">{{ biz.name }}</h2>
@@ -41,6 +44,13 @@ export default {
       const businesses = this.searchData.results.businesses || [];
       return businesses.sort((a, b) => a.name.localeCompare(b.name));
     },
+    hasResults() {
+      if (this.searchData.results) {
+        return this.searchData.results.total > 0;
+      } else {
+        return false;
+      }
+    }
   },
   methods: {
     stripPeriod(rating) {
