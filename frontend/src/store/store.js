@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Vue from 'vue';
 import Vuex from 'vuex';
-import YelpQueryStringer from '../classes/YelpQueryStringer';
+import YelpQueryStringBuilder from '../classes/YelpQueryStringBuilder';
 
 Vue.use(Vuex);
 Vue.config.productionTip = false;
@@ -24,7 +24,7 @@ const searchData = {
       commit('UPDATE_LOADING', true);
       axios.post('http://localhost:3000/api/v1/yelp_request', {
         yelp_request: {
-          url: getters.yelpQueryStringer.requestUrl(),
+          url: getters.yelpQueryStringBuilder.requestUrl(),
         },
       })
         .then((response) => {
@@ -121,7 +121,7 @@ const searchData = {
     },
   },
   getters: {
-    yelpQueryStringer: state => new YelpQueryStringer(state.search),
+    yelpQueryStringBuilder: state => new YelpQueryStringBuilder(state.search),
   },
 };
 

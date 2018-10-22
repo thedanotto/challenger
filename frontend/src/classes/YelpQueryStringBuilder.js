@@ -1,4 +1,4 @@
-export default class YelpQueryStringer {
+export default class YelpQueryStringBuilder {
   constructor(searchData) {
     this.encodedLocation = encodeURI(searchData.location);
     this.encodedPrice = encodeURI(searchData.price.join(','));

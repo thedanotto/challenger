@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex';
+import { mapState } from 'vuex';
 import ButtonGroup from './ButtonGroup';
 
 export default {
@@ -54,9 +54,6 @@ export default {
     ButtonGroup,
   },
   computed: {
-    ...mapGetters([
-      'yelpQueryStringer',
-    ]),
     ...mapState([
       'searchData',
     ]),
