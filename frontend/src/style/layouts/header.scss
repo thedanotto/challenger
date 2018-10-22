@@ -1,0 +1,23 @@
+header {
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  background-color: $white;
+  width: 100%;
+  font-size: $type-qsm;
+
+  bottom: auto;
+  border-bottom: 1px solid $grey;
+  border-top: none;
+}
+
+.main-nav__li {
+  align-self: center;
+  display: block;
+  padding: 20px;
+
+  h1 {
+    margin: 0;
+  }
+}

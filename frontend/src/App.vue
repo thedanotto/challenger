@@ -1,12 +1,23 @@
 <template>
-  <div class="wrapper">
-    <div class="container">
-      <div class="grid">
-        <div class="inputs-container">
-          <Search/>
-        </div>
-        <div class="results-container">
-          <Results />
+  <div>
+    <header>
+      <nav class="main-nav">
+        <ul class="main-nav__ul">
+          <li class="main-nav__li">
+            <h1>Open Now!</h1>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="wrapper">
+      <div class="container">
+        <div class="grid">
+          <div class="inputs-container">
+            <Search/>
+          </div>
+          <div class="results-container">
+            <Results />
+          </div>
         </div>
       </div>
     </div>
