@@ -22,7 +22,7 @@ const searchData = {
     updateResults: ({ commit }, value) => commit('UPDATE_RESULTS', value),
     getResults: ({ commit, getters }) => {
       commit('UPDATE_LOADING', true);
-      axios.post('https://dry-peak-89639.herokuapp.com/api/v1/yelp_request', {
+      axios.post('http://localhost:3000/api/v1/yelp_request', {
         yelp_request: {
           url: getters.yelpQueryStringer.requestUrl(),
         },
