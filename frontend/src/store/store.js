@@ -28,9 +28,11 @@ const searchData = {
         },
       })
         .then((response) => {
+          commit('UPDATE_ERRORS', '');
           commit('UPDATE_RESULTS', response.data);
         })
-        .catch(() => {
+        .catch((error) => {
+          commit('UPDATE_ERRORS', error.message);
         })
         .finally(() => {
           commit('UPDATE_LOADING', false);
@@ -56,11 +58,15 @@ const searchData = {
     UPDATE_LOCATION(state, value) {
       state.search.location = value;
     },
+    UPDATE_ERRORS(state, value) {
+      state.errors = value;
+    },
     UPDATE_RESULTS(state, value) {
       state.results = value;
     },
   },
   state: {
+    errors: '',
     loading: false,
     searchOptions: {
       priceOptions: [

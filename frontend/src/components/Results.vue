@@ -3,6 +3,9 @@
     <div v-if="searchData.loading" class="loading">
       <circle8></circle8>
     </div>
+    <div v-else-if="searchData.errors.length > 0">
+      Error: {{ searchData.errors }}
+    </div>
     <div v-else-if="hasResults === false">
       No Results. Try a different Location.
     </div>
