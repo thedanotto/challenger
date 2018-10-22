@@ -5,16 +5,15 @@
       <input
         @focus="handleFocus($event)"
         :value="searchData.search.location"
-        @blur="updateLocation"
-        @input="debounceUpdateLocation"
+        @input="updateLocation"
       />
+      <button @click="getResults">Show Me Open Restaurants!</button>
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapState } from 'vuex';
-import debounce from 'lodash.debounce';
 
 export default {
   name: 'Search',
@@ -27,17 +26,14 @@ export default {
     ]),
   },
   methods: {
-    // eslint-disable-next-line
-    debounceUpdateLocation: debounce(function (e) {
-      this.$store.dispatch('updateLocation', e.target.value);
+    getResults() {
       this.$store.dispatch('getResults');
-    }, 1000),
+    },
     handleFocus(e) {
       e.target.select();
     },
     updateLocation(e) {
       this.$store.dispatch('updateLocation', e.target.value);
-      this.$store.dispatch('getResults');
     },
   },
   mounted() {

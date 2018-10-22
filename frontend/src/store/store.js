@@ -11,6 +11,7 @@ const searchData = {
     updateLocation: ({ commit }, value) => commit('UPDATE_LOCATION', value),
     updateResults: ({ commit }, value) => commit('UPDATE_RESULTS', value),
     getResults: ({ commit, getters }) => {
+      commit('UPDATE_LOADING', true);
       axios.post('http://localhost:3000/api/v1/yelp_request', {
         yelp_request: {
           url: getters.yelpQueryStringer.requestUrl(),
@@ -22,10 +23,16 @@ const searchData = {
         .catch((error) => {
           // TODO: Handle Errors
           console.log(error);
+        })
+        .finally(() => {
+          commit('UPDATE_LOADING', false);
         });
     },
   },
   mutations: {
+    UPDATE_LOADING(state, value) {
+      state.loading = value;
+    },
     UPDATE_LOCATION(state, value) {
       state.search.location = value;
     },
@@ -34,10 +41,12 @@ const searchData = {
     },
   },
   state: {
+    loading: false,
     search: {
       location: '720 East Wisconsin Ave. Milwaukee, WI 53202',
       radius: '804',
       price: [1, 2, 3, 4],
+      openNow: true,
     },
     results: {
       businesses: [],

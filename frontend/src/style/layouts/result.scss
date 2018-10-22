@@ -1,5 +1,7 @@
 /* Single Result */
 .result {
+  font-size: $type-qsm;
+
   hr {
     margin: 20px 0;
   }
@@ -33,7 +35,6 @@
 .result__reviews {
   span {
     vertical-align: top;
-    font-size: 14px;
   }
 }
 

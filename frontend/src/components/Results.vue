@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div v-for="biz in alphabetizeBusinesses" :key="biz.id" class="result">
+    <div v-if="searchData.loading" class="loading">
+      <circle8></circle8>
+    </div>
+    <div v-else v-for="biz in alphabetizeBusinesses" :key="biz.id" class="result">
       <div class="result__main-attributes">
         <h2 class="result__h2">{{ biz.name }}</h2>
         <div class="result__reviews">
@@ -19,9 +22,13 @@
 
 <script>
 import { mapState } from 'vuex';
+import { Circle8 } from 'vue-loading-spinner';
 
 export default {
   name: 'Results',
+  components: {
+    Circle8
+  },
   data() {
     return {
     };

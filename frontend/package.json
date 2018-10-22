@@ -17,8 +17,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "breakpoint-sass": "^2.7.1",
-    "lodash.debounce": "^4.0.8",
     "vue": "^2.5.2",
+    "vue-loading-spinner": "^1.0.11",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
