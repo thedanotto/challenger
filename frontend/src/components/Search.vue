@@ -37,10 +37,7 @@
       </div>
     </div>
     <div class="field">
-      <button
-        class="btn btn--submit"
-        @click="getResults"
-      >
+      <button class="btn btn--submit" @click="getResults">
         Find Nearby {{ searchData.search.term }}!
       </button>
     </div>
