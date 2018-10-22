@@ -8,6 +8,16 @@ Vue.config.productionTip = false;
 
 const searchData = {
   actions: {
+    selectDistance: ({ commit }, value) => commit('SELECT_DISTANCE', value),
+    selectTerm: ({ commit }, value) => commit('SELECT_TERM', value),
+    togglePrice: ({ commit, state }, value) => {
+      if (state.search.price.indexOf(value) !== -1) {
+        commit('REMOVE_PRICE', value);
+      } else {
+        const newPriceArray = state.search.price;
+        commit('ADD_PRICE', newPriceArray.concat([value]));
+      }
+    },
     updateLocation: ({ commit }, value) => commit('UPDATE_LOCATION', value),
     updateResults: ({ commit }, value) => commit('UPDATE_RESULTS', value),
     getResults: ({ commit, getters }) => {
@@ -28,6 +38,18 @@ const searchData = {
     },
   },
   mutations: {
+    ADD_PRICE(state, value) {
+      state.search.price = value;
+    },
+    REMOVE_PRICE(state, value) {
+      state.search.price = state.search.price.filter(item => item !== value);
+    },
+    SELECT_DISTANCE(state, value) {
+      state.search.radius = value;
+    },
+    SELECT_TERM(state, value) {
+      state.search.term = value;
+    },
     UPDATE_LOADING(state, value) {
       state.loading = value;
     },
@@ -42,9 +64,10 @@ const searchData = {
     loading: false,
     search: {
       location: '720 East Wisconsin Ave. Milwaukee, WI 53202',
-      radius: '804',
-      price: [1, 2, 3, 4],
+      radius: 804,
+      price: ['1', '2', '3', '4'],
       openNow: true,
+      term: 'Restaurants',
     },
     results: {
       businesses: [],

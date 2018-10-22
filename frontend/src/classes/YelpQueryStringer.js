@@ -4,6 +4,7 @@ export default class YelpQueryStringer {
     this.encodedPrice = encodeURI(searchData.price.join(','));
     this.encodedRadius = encodeURI(searchData.radius);
     this.encodedOpenNow = encodeURI(searchData.openNow);
+    this.encodedTerm = encodeURI(searchData.term);
   }
 
   requestUrl() {
@@ -12,7 +13,8 @@ export default class YelpQueryStringer {
     const radius = `radius=${this.encodedRadius}`;
     const price = `price=${this.encodedPrice}`;
     const openNow = `open_now=${this.encodedOpenNow}`;
+    const term = `term=${this.encodedTerm}`;
 
-    return `${baseUrl}${[location, radius, price, openNow].join('&')}`;
+    return `${baseUrl}${[term, location, radius, price, openNow].join('&')}`;
   }
 }
